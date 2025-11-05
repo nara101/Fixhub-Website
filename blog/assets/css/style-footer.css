@@ -1,0 +1,95 @@
+:root {
+  --primary1: #3299ed;
+  --primary2: #f2575f;
+  --nav-select: #f92c30;
+  --bg1: linear-gradient(bottom, #c0e3f8, #fff7f7);
+  --bg2: linear-gradient(bottom, #fff7f7, #c0e3f8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* FOOTER */
+.footer {
+  font-weight: 400;
+  padding-top: 20px;
+  padding-bottom: 0;
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.footer .container .footer-konten .footer-logo {
+  margin: 15px 0;
+  height: 100px;
+}
+
+.footer .container h5 {
+  margin-bottom: 15px;
+}
+
+.footer .container .icon-fixed {
+  width: 24px;
+  height: auto;
+  min-width: 24px;
+  flex-shrink: 0;
+}
+
+.footer .container a {
+  color: inherit;
+}
+.footer .container a:hover {
+  color: var(--primary2);
+}
+
+.footer-copy {
+  text-align: center;
+  justify-content: center;
+  background-color: var(--primary1);
+  color: #fff;
+  font-size: 10px;
+}
+
+.footer .social {
+  text-align: center;
+  line-height: 50px;
+}
+
+.footer .social a {
+  font-size: 24px;
+  color: #fff;
+  background-color: var(--primary1);
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  margin: 15px 10px;
+}
+
+.footer .social a:hover {
+  background-color: var(--primary2);
+  color: #fff;
+}
+
+.footer .motto {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 300;
+}
+.footer .motto p {
+  margin: 0;
+  padding: 0;
+}
+
+.footer .motto .pbawah {
+  padding-bottom: 20px;
+}

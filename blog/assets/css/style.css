@@ -1,0 +1,739 @@
+:root {
+  --primary1: #3299ed;
+  --primary2: #f2575f;
+  --nav-select: #f9272b;
+  --bg1: linear-gradient(to bottom, #c0e3f8, #fff7f7);
+  --bg2: linear-gradient(to bottom, #fff7f7, #c0e3f8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* LANDING SECTION */
+
+/* header */
+/* === Hero Section === */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background: url("../images/img1.jpg") center center / cover no-repeat;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Overlay gradient */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    /* sisi kiri */ rgba(0, 0, 0, 0.5) 40%,
+    /* tengah */ rgba(0, 0, 0, 0.05) 100% /* kanan hampir transparan */
+  );
+  z-index: 1;
+}
+
+/*teks di atas overlay */
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive*/
+@media (max-width: 768px) {
+  .hero-section {
+    height: 70vh;
+    text-align: start;
+    padding: 0.1rem;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section .btn {
+    font-size: 0.9rem;
+  }
+}
+
+/* END LANDING SECTION */
+
+/* SEJARAH SINGKAT */
+.sejarah-singkat-section {
+  background: linear-gradient(to bottom, #c0e3f8, #fff7f7);
+  padding: 40px;
+}
+.sejarah-singkat-section .title {
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+}
+
+.sejarah-singkat-section .underline {
+  width: 30%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Animasi stroke "tertarik" */
+.sejarah-singkat-section .underline path {
+  stroke-dasharray: 5000; /* total panjang garis kira-kira */
+  stroke-dashoffset: 5000;
+  animation: draw 2s forwards ease-in-out;
+  stroke: var(--primary2);
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.sejarah-singkat-section .text-content {
+  margin: 0 25px;
+}
+.sejarah-singkat-section .text-content p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.6;
+}
+/* END SEJARAH SINGKAT */
+
+/* TIM KAMI */
+.tim-kami-section {
+  background: linear-gradient(to bottom, #fff7f7, #c0e3f8);
+  padding: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.tim-kami-section .title {
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  font-weight: 600;
+  display: flex;
+  justify-content: center; /* rata tengah horizontal (main axis) */
+  align-items: center; /* rata tengah vertical (cross axis) */
+  /* height: 200px; */
+}
+
+.tim-kami-section .card .card-body {
+  width: clamp(15rem, 10vw, 15rem);
+  height: clamp(2rem, 10vw, 4rem);
+
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.tim-kami-section .card .card-body span {
+  font-size: clamp(8px, 15vw, 15px);
+  font-weight: 600;
+}
+
+.tim-kami-section .card {
+  height: auto;
+  width: clamp(18rem, 15vw, 20rem);
+  justify-content: center; /* rata tengah horizontal (main axis) */
+  align-items: center; /* rata tengah vertical (cross axis) */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.864);
+  background-color: var(--primary1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tim-kami-section .card:hover {
+  background-color: var(--primary2);
+  transform: translateY(-5px);
+}
+
+.tim-kami-section .col {
+  margin: 25px 0;
+  justify-content: center;
+}
+.tim-kami-section .row {
+  justify-content: center;
+}
+.tim-kami-section .profil-kami .card-img-top {
+  width: clamp(10rem, 15vw, 20rem);
+  height: clamp(10rem, 15vw, 20rem);
+  margin: 20px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.437);
+}
+/* END TIM KAMI */
+
+/* HOW WE HELP START */
+.section-divider {
+  color: rgb(151, 149, 149);
+  background-color: rgb(190, 190, 190);
+  height: 2px;
+  width: 80%;
+  margin: 1.5rem auto;
+}
+
+/* === General Layout === */
+.help {
+  background: linear-gradient(to bottom, #c0e3f8, #fff7f7);
+}
+
+#help .row {
+  display: flex;
+  flex-wrap: wrap; /* penting agar tetap responsif */
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  margin-top: 45px;
+}
+
+#help .col-md-3 {
+  display: flex;
+  justify-content: center;
+}
+
+/* === Card Styling === */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.layanan a,
+.target-market a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* === Icon Circle === */
+.card-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  margin-bottom: 15px;
+  font-size: 40px;
+  transition: background-color 0.3s ease;
+}
+
+/* Warna */
+.layanan .card-image {
+  background-color: var(--primary1);
+}
+
+.layanan .card:hover .card-image {
+  background-color: var(--primary2);
+}
+
+.target-market .card:hover .card-image {
+  background-color: var(--primary1);
+}
+
+.target-market .card-image {
+  background-color: var(--primary2);
+}
+
+/* === Card Text === */
+.card-body .card-title {
+  font-weight: bold;
+  font-size: 15px;
+  color: #333;
+}
+
+/* === Heading Styles === */
+h3.fw-bold {
+  text-align: center;
+  font-size: 24px;
+  margin: 30px 0 20px 0;
+}
+
+/* HALAMAN TARGET MARKET */
+#header-tm,
+#header-lyn {
+  position: relative;
+  height: 55vh; /* Sesuaikan tinggi agar lebih mudah terlihat */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+#header-tm {
+  background-image: url("../images/img2.jpg");
+}
+
+#header-lyn {
+  background-image: url("../images/img3.jpg");
+}
+
+.header-tm .header-content,
+.header-lyn .header-content {
+  position: absolute;
+  top: 75%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 20px;
+}
+
+.header-tm .header-content {
+  left: 35%;
+}
+
+.header-lyn .header-content {
+  left: 25%;
+}
+
+#header-tm h1,
+#header-lyn h1 {
+  font-size: 2.5rem;
+  /* font-family: "Lora", serif; */
+  margin-bottom: 10px;
+}
+
+#header-tm h2,
+#header-lyn h2 {
+  font-size: 1rem;
+  /* font-family: "Noto Sans", sans-serif; */
+  font-weight: normal;
+}
+
+/* Styling for the main section */
+#how-we-help {
+  /* background-color: #f8f9fa; */
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/* Styling for the section title */
+#how-we-help h3 {
+  font-size: 2rem;
+  font-family: "Lora", serif;
+  color: #333;
+}
+
+/* Styling for the paragraph under the title */
+#how-we-help p {
+  font-size: 15px;
+  font-family: "Noto Sans", sans-serif;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Styling for the nav tabs */
+.nav-tabs {
+  border-bottom: 2px solid #f2575f;
+}
+
+.nav-tabs-lyn {
+  border-bottom: 2px solid #3299ed;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+}
+
+.nav-tabs .nav-link,
+.nav-tabs-lyn .nav-link-lyn {
+  border: none;
+  font-weight: bold;
+  padding: 12px 20px;
+  font-size: 1rem;
+}
+
+.nav-tabs .nav-link {
+  color: #3299ed;
+}
+
+.nav-tabs-lyn .nav-link-lyn {
+  color: #f2575f;
+  text-decoration: none;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs-lyn .nav-link-lyn.active {
+  color: white;
+  border-radius: 5px 5px 0 0;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #f2575f;
+}
+
+.nav-tabs-lyn .nav-link-lyn.active {
+  background-color: #3299ed;
+}
+
+.nav-tabs .nav-link:hover {
+  background-color: #3299ed62;
+}
+
+.nav-tabs-lyn .nav-link-lyn:hover {
+  background-color: #f2575f70;
+  border-radius: 5px 5px 0 0;
+}
+
+/* Styling for the tab content */
+.tab-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tab-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px; /* jarak antara icon dan text */
+}
+
+/* Circle icon */
+.ic-tm,
+.ic-lyn {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  font-size: 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ic-tm {
+  background-color: #f2575f; /* warna lingkaran */
+}
+
+.ic-lyn {
+  background-color: #3299ed; /* warna lingkaran */
+}
+
+/* Text container */
+.tab-text h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.tab-text p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  #header-tm h1,
+  #header-lyn h1 {
+    font-size: 2.2rem;
+  }
+  #header-tm h2,
+  #header-lyn h2 {
+    font-size: 1.4rem;
+  }
+  .header-tm .header-content,
+  .header-lyn .header-content {
+    left: 40%;
+  }
+}
+
+@media (max-width: 576px) {
+  #header-tm h1,
+  #header-lyn h1 {
+    font-size: 1.6rem;
+  }
+  #header-tm h2,
+  #header-lyn h2 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #how-we-help h3 {
+    font-size: 1.5rem;
+  }
+
+  .nav-tabs .nav-link {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+
+  .nav-tabs-lyn .nav-link-lyn {
+    padding: 12px 10px;
+    font-size: 13px;
+  }
+
+  .nav-tabs .nav-link.active,
+  .nav-tabs-lyn .nav-link-lyn.active {
+    color: white !important;
+    border-radius: 5px 5px 0 0;
+  }
+
+  .nav-tabs .nav-link.active {
+    background-color: #f2575f !important;
+  }
+
+  .nav-tabs-lyn .nav-link-lyn.active {
+    background-color: #3299ed !important;
+  }
+
+  .tab-content {
+    padding: 15px;
+  }
+
+  .ic-tm,
+  .ic-lyn {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+  }
+
+  .tab-text h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ALASAN PILIH */
+.alasan-pilih-section {
+  background: linear-gradient(to bottom, #fff7f7, #c0e3f8);
+  padding: 20px 50px;
+}
+
+.alasan-pilih-section .title {
+  font-size: 35px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+.alasan-pilih-section .konten-alasan .text-alasan {
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
+.alasan-pilih-section .konten-alasan .icon-alasan img {
+  width: 50px;
+  height: 50px;
+}
+
+.alasan-pilih-section .konten-alasan .text-alasan .title-1 {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.alasan-pilih-section .konten-alasan .text-alasan p {
+  font-size: 15px;
+}
+
+/* END ALASAN PILIH */
+
+/*  BLOG START */
+.blog-section {
+  background: linear-gradient(to bottom, #c0e3f8, #fff7f7)
+}
+.blog-section .btn-primary {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.blog-section .btn-primary:hover {
+  transform: translateY(-2px);
+  background-color: #f2575f;
+}
+/*  BLOG END */
+
+/* ==== BLOG PAGE STYLE ==== *//* ===== BLOG PAGE ===== */
+/* =========================
+   BLOG PAGE STYLING
+   ========================= */
+.blog-page {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.blog-page .container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== SIDEBAR ===== */
+.blog-page .sidebar {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  height: fit-content;
+}
+
+.blog-page .sidebar h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.blog-page .sidebar ul,
+.blog-page .sidebar ol {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.blog-page .sidebar li {
+  margin-bottom: 8px;
+  color: #333;
+  cursor: pointer;
+}
+
+.blog-page .search-box input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 25px;
+}
+
+.blog-page .insta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.blog-page .insta-grid img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* ===== CONTENT AREA ===== */
+.blog-page .section-header {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.blog-page .section-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.blog-page .section-header p {
+  color: #6c757d;
+}
+
+/* GRID ARTIKEL */
+.blog-page .blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.blog-page .blog-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.blog-page .blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-page .blog-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-page .card-content {
+  padding: 15px;
+}
+
+.blog-page .category {
+  color: #007bff;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.blog-page .card-content h3 {
+  font-size: 1.1rem;
+  margin: 8px 0;
+}
+
+.blog-page .card-content p {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.blog-page .read-more {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007bff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.blog-page .read-more:hover {
+  text-decoration: underline;
+}
+
+/* PAGINATION */
+.blog-page .pagination {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.blog-page .pagination a {
+  display: inline-block;
+  padding: 8px 14px;
+  margin: 0 4px;
+  border-radius: 5px;
+  background: #fff;
+  border: 1px solid #ddd;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.blog-page .pagination a.active,
+.blog-page .pagination a:hover {
+  background: #007bff;
+  color: #fff;
+}
+

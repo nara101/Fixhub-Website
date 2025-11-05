@@ -1,0 +1,76 @@
+:root {
+  --primary1: #3299ed;
+  --primary2: #f2575f;
+  --nav-select: #f9272b;
+  --bg1: linear-gradient(to bottom, #c0e3f8, #fff7f7);
+  --bg2: linear-gradient(to bottom, #fff7f7, #c0e3f8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+body {
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+/* PROFIL CONTENT */
+
+.profil-content {
+  background: var(--bg1);
+  padding: 125px 50px 20px 50px; /*top right bottom left*/
+}
+.profil-content .profil-left {
+  margin-right: 65px;
+  margin-bottom: 50px;
+  flex: 0 0 auto;
+}
+
+.profil-content .profil-left img {
+  width: clamp(8rem, 20vw, 20rem);
+  height: auto;
+  box-shadow: 3px 2px 8px #0000008f;
+}
+
+.profile-content .isi-profil {
+  max-width: clamp(300px, 50vw, 600px);
+  overflow-wrap: break-word;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.profil-content .isi-profil h2 {
+  font-weight: 600;
+}
+
+.profil-content .isi-profil .sub-title {
+  font-weight: 600;
+}
+
+.profil-content .isi-profil .social a {
+  font-size: 24px;
+  color: #fff;
+  background-color: var(--primary1);
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  margin: 10px 0; /*top-bottom right-left*/
+  margin-bottom: 200px;
+}
+
+.profil-content .isi-profil .social a:hover {
+  background-color: var(--primary2);
+  color: #fff;
+}
